@@ -92,7 +92,17 @@ public class MyLinkedList<K> {
 		return temp;
 	}
 	
-	public INode<K> search(K key) {
+	public INode<K> popLast(){
+		INode<K> temp=head;
+		while(temp.getNext()!=tail) {
+			temp=temp.getNext();
+		}
+		tail=temp;
+		temp=temp.getNext();
+		tail.setNext(null);
+		return temp;
+
+  public INode<K> search(K key) {
 		INode<K> temp = head;
 		while (temp != null) {
 			if (temp.getKey().equals(key)) {
