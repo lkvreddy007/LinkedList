@@ -142,7 +142,8 @@ public class MyLinkedList<K> {
 		}
 		temp.setNext((temp.getNext()).getNext());
 		print();
-		System.out.println("Size after Deletion is "+size());
-		return size();
+		int i=size();
+		System.out.println("Size after Deletion is "+i);
+		return i;
 	}
 }
