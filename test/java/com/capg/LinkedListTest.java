@@ -6,7 +6,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class LinkedListTest {
-
 	@Test
 	public void test() {
 		Node<Integer> myFirstNode=new Node<>(70);
