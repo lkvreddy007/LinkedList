@@ -101,8 +101,8 @@ public class MyLinkedList<K> {
 		temp=temp.getNext();
 		tail.setNext(null);
 		return temp;
-
-  public INode<K> search(K key) {
+	}
+  	public INode<K> search(K key) {
 		INode<K> temp = head;
 		while (temp != null) {
 			if (temp.getKey().equals(key)) {
