@@ -1,11 +1,11 @@
 package com.capg;
 
-public class MyLinkedList<K> {
+public class SortedLinkedList<K extends Comparable<K>> {
 	public INode<K> head;
 	public INode<K> tail;
 	int size=0;
 	
-	public MyLinkedList() {
+	public SortedLinkedList() {
 		this.head=null;
 		this.tail=null;
 	}
@@ -16,6 +16,14 @@ public class MyLinkedList<K> {
 	
 	public INode<K> getHead() {
 		return this.head;
+	}
+	
+	public void setTail(INode<K> tail) {
+		this.tail=tail;
+	}
+	
+	public INode<K> getTail(){
+		return this.tail;
 	}
 	
 	public void add(INode<K> node) {
@@ -100,8 +108,8 @@ public class MyLinkedList<K> {
 			}
 		newNode.setNext(temp.getNext());
 		temp.setNext(newNode);
-		adjustTail();
 		print();
+		adjustTail();
 	}
 	
 	public INode<K> popFirst() {
@@ -118,6 +126,7 @@ public class MyLinkedList<K> {
 		tail=temp;
 		temp=temp.getNext();
 		tail.setNext(null);
+		adjustTail();
 		return temp;
 	}	
   
@@ -145,7 +154,6 @@ public class MyLinkedList<K> {
 		print();
 		int i=size();
 		System.out.println("Size after Deletion is "+i);
-		adjustTail();
 		return i;
 	}
 	
@@ -154,6 +162,31 @@ public class MyLinkedList<K> {
 		while(!(node==null)) {
 			this.tail=node;
 			node=node.getNext();
+		}
+	}
+	
+	public void sortedAdd(INode<K> newNode) {
+		INode<K> temp=this.head;
+		INode<K> temp2=null;
+		if(this.tail==null) {
+			this.tail=newNode;
+		}
+		if(this.head==null) {
+			this.head=newNode;
+		}
+		else {
+			while(temp.getKey().compareTo(newNode.getKey())<0) {
+				temp2=temp;
+				temp=temp.getNext();
+			}
+			if(temp2==null) {
+				this.head=newNode;
+			}
+			else {
+				temp2.setNext(newNode);
+			}
+			newNode.setNext(temp);
+			adjustTail();
 		}
 	}
 }
