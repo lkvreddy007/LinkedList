@@ -16,7 +16,7 @@ public class LinkedListTest {
 		linkedList.append(myFirstNode);
 		linkedList.append(mySecondNode);
 		linkedList.append(myThirdNode);
-		INode<Integer> popped=linkedList.popFirst();
-		Assert.assertEquals(myFirstNode, popped);
+		INode<Integer> popped=linkedList.popLast();
+		Assert.assertEquals(myThirdNode, popped);
 	}
 }

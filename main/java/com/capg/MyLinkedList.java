@@ -91,4 +91,15 @@ public class MyLinkedList<K> {
 		this.head=head.getNext();
 		return temp;
 	}
+	
+	public INode<K> popLast(){
+		INode<K> temp=head;
+		while(temp.getNext()!=tail) {
+			temp=temp.getNext();
+		}
+		tail=temp;
+		temp=temp.getNext();
+		tail.setNext(null);
+		return temp;
+	}
 }
