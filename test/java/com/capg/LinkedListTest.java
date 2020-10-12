@@ -12,9 +12,10 @@ public class LinkedListTest {
 		Node<Integer> myFirstNode=new Node<>(70);
 		Node<Integer> mySecondNode=new Node<>(30);
 		Node<Integer> myThirdNode=new Node<>(56);
-		myFirstNode.setNext(mySecondNode);
-		mySecondNode.setNext(myThirdNode);
-		Assert.assertEquals(mySecondNode, myFirstNode.getNext());
-		Assert.assertEquals(myThirdNode, mySecondNode.getNext());
+		MyLinkedList<Integer> linkedList =new MyLinkedList<Integer>();
+		linkedList.add(myFirstNode);
+		linkedList.add(mySecondNode);
+		linkedList.add(myThirdNode);
+		Assert.assertEquals(myThirdNode, linkedList.getHead());
 	}
 }
