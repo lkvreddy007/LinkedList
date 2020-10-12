@@ -85,4 +85,10 @@ public class MyLinkedList<K> {
 			x=x.getNext();
 		}
 	}
+	
+	public INode<K> popFirst() {
+		INode<K> temp=this.head;
+		this.head=head.getNext();
+		return temp;
+	}
 }
