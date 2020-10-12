@@ -148,7 +148,7 @@ public class MyLinkedList<K> {
 		adjustTail();
 		return i;
 	}
-	
+  
 	public void adjustTail() {
 		INode<K> node=this.head;
 		while(!(node==null)) {
