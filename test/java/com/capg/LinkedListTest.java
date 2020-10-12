@@ -16,7 +16,7 @@ public class LinkedListTest {
 		linkedList.append(myFirstNode);
 		linkedList.append(mySecondNode);
 		linkedList.append(myThirdNode);
-		linkedList.insertAfter(30, 40);
-		Assert.assertTrue(linkedList.search(40));
+		int i=linkedList.delete(56);
+		Assert.assertEquals(2,i);
 	}
 }

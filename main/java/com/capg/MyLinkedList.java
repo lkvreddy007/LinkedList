@@ -120,7 +120,7 @@ public class MyLinkedList<K> {
 		return temp;
 	}	
   
-  public boolean search(K key) {
+	public boolean search(K key) {
 		INode<K> temp = head;
 		while (temp != null) {
 			if (temp.getKey().equals(key)) {
@@ -130,5 +130,19 @@ public class MyLinkedList<K> {
 				temp = temp.getNext();
 		}
 		return false;
+	}
+	
+	public int delete(K key) {
+		INode<K> temp=head;
+		if(temp==null) {
+			return 0;
+		}
+		while(!((temp.getNext()).getKey().equals(key))) {
+			temp=temp.getNext();
+		}
+		temp.setNext((temp.getNext()).getNext());
+		print();
+		System.out.println("Size after Deletion is "+size());
+		return size();
 	}
 }
