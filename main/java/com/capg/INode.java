@@ -3,6 +3,6 @@ package com.capg;
 public interface INode <K>{
 	K getKey();
 	void setKey(K key);
-	INode getNext();
+	INode<K> getNext();
 	void setNext(INode<K> next);
 }

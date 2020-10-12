@@ -1,7 +1,7 @@
 package com.capg;
 
 public class Node<K> implements INode<K>{
-	private INode next;
+	private INode<K> next;
 	private K key;
 	
 	public Node(K k) {
@@ -17,11 +17,11 @@ public class Node<K> implements INode<K>{
 		return key;
 	}
 	
-	public INode getNext() {
+	public INode<K> getNext() {
 		return next;
 	}
 	
-	public void setNext(INode next) {
+	public void setNext(INode<K> next) {
 		this.next=next;
 	}
 

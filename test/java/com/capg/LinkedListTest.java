@@ -14,8 +14,8 @@ public class LinkedListTest {
 		Node<Integer> myThirdNode=new Node<>(56);
 		MyLinkedList<Integer> linkedList =new MyLinkedList<Integer>();
 		linkedList.append(myFirstNode);
-		linkedList.append(mySecondNode);
 		linkedList.append(myThirdNode);
-		Assert.assertEquals(myFirstNode, linkedList.getHead());
+		linkedList.insert(myFirstNode,mySecondNode,myThirdNode);
+		Assert.assertEquals(mySecondNode, myFirstNode.getNext());
 	}
 }
