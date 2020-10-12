@@ -79,11 +79,28 @@ public class MyLinkedList<K> {
 	}
 	
 	public void print() {
-		INode<K> x=head;
+		INode<K> x=this.head;
+		if(x==null) {
+			System.out.println("Linked list is Empty");
+		}
 		while(x!=null) {
 			System.out.println(x.getKey());
 			x=x.getNext();
 		}
+	}
+	
+	public void insertAfter(K prevKey,K key) {
+		INode<K> temp=head;
+		Node<K> newNode =new Node<K>(key);
+		if(temp==null) {
+			return;
+		}
+		while(!(temp.getKey().equals(prevKey))) {
+				temp=temp.getNext();
+			}
+		newNode.setNext(temp.getNext());
+		temp.setNext(newNode);
+		print();
 	}
 	
 	public INode<K> popFirst() {
@@ -101,16 +118,17 @@ public class MyLinkedList<K> {
 		temp=temp.getNext();
 		tail.setNext(null);
 		return temp;
+	}	
 
-  public INode<K> search(K key) {
+    public boolean search(K key) {
 		INode<K> temp = head;
 		while (temp != null) {
 			if (temp.getKey().equals(key)) {
 				System.out.println("Element found");
-				return temp;
+				return true;
 			} else
 				temp = temp.getNext();
 		}
-		return null;
+		return false;
 	}
 }
